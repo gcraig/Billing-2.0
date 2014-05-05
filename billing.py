@@ -11,7 +11,7 @@ couch = couchdb.Server()
 db = couch['billing']
 
 def read_template( invoice ):
-  filein = open( 'invoice.json.tpl' )
+  filein = open( 'templates/invoice.json.tpl' )
   tpl = string.Template( filein.read() )
   data =  { 'invoice_number' : invoice.invoice_number }
   result = tpl.substitute( data )
@@ -24,14 +24,19 @@ def read_invoice( db ):
   data = read_template( invoice )
   print data
   invoice.store( db )
+  invoice = Invoice.load( db, id )
+  print "New invoice number: " + invoice.invoice_number
 
-read_invoice( db )
+def db_init():
+  print "Initializing the database ..."
+
+def init():
+  print "Initializing billing system ..."
+  db_init()
+
+if __name__ == '__main__':
+  read_invoice( db )
+  #init()
 
 #for id in db:
-#  print id
-#  invoice = Invoice.load(db, id)
-#  invoice.invoice_number = str(int(invoice.invoice_number) + 1)
-#  print invoice
-#  invoice.store(db)
-
 # invoice.json.tmpl
