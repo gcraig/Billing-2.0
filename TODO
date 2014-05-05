@@ -1,15 +1,15 @@
-Multi-threaded invoicing engine
-State-machine based
-Guard scriptable
-Reporting
-PDF, Doc generation
-Remittance, Disputes, Credits, Memos
-Tax Tables(?)
-Client Contacts
-Products
+- [ ] Multi-threaded invoicing engine
+- [ ] State-machine based
+- [ ] Guard scriptable
+- [ ] Reporting
+- [ ] PDF, Doc generation
+- [ ] Remittance, Disputes, Credits, Memos
+- [ ] Tax Tables(?)
+- [ ] Client Contacts
+- [ ] Products
 
-MySQL
-MongoDB
-PostgreSQL
-CouchDB
-Oracle/MSSQL 
+- [x] MySQL
+- [ ] MongoDB
+- [x] PostgreSQL
+- [x] CouchDB
+- [ ] Oracle/MSSQL 
